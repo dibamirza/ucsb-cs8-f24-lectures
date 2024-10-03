@@ -29,3 +29,10 @@ for i in range(customers):
 # Print final report
 print(f"Total revenue from all customers: ${total_revenue:.2f}")
 
+
+# Issues:
+# 1. Mixed Responsibilities: Input, validation, discount calculation, and report generation are all mixed together.
+# 2. Bug Isolation: If you find an error in the logic, like a discount not being applied correctly or the validation 
+#    making it difficult to isolate the problem failing in certain cases, you have to sift through the entire code.
+# 3. Repetition: If you need to validate inputs differently in the future or apply a new discount strategy, 
+#    you'll have to rewrite large parts of the code.
