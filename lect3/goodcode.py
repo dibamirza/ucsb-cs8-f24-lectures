@@ -50,8 +50,6 @@ print(f"Total revenue from all customers: ${total_revenue:.2f}")
 
 # Modular Design: Each function handles a specific responsibility.
 
-# Advantages of Modular Code for Bug Detection:
-
 # 1. Easy to find and correct bugs: If there's a bug, say, in the discount calculation, 
 # you only need to check the calculate_discount() function rather than combing through the entire code. 
 
@@ -60,3 +58,5 @@ print(f"Total revenue from all customers: ${total_revenue:.2f}")
 
 # 3. Maintainability: You can update specific parts (like a new discount policy) without affecting the entire 
 #    flow of the program.
+
+# 4. Input and output operations are separated from processing logic
