@@ -48,3 +48,15 @@ total_revenue = generate_report(customers_data)
 # Output: Display the final total revenue
 print(f"Total revenue from all customers: ${total_revenue:.2f}")
 
+# Modular Design: Each function handles a specific responsibility.
+
+# Advantages of Modular Code for Bug Detection:
+
+# 1. Easy to find and correct bugs: If there's a bug, say, in the discount calculation, 
+# you only need to check the calculate_discount() function rather than combing through the entire code. 
+
+# 2. Simpler Testing: You can easily write unit tests for individual functions like process_customer(), 
+# calculate_discount(), and validate_customer_data(), which makes it easy to catch bugs in small, manageable parts of the program.
+
+# 3. Maintainability: You can update specific parts (like a new discount policy) without affecting the entire 
+#    flow of the program.
