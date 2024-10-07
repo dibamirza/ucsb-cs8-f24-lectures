@@ -12,7 +12,7 @@
 # 2.Functions make it easier to find/fix program errors (bugs)
 # 3.Functions make it easier to write code (come up with the right algorithm)
 
-# Main goals of today's lecture: 
+# Goal of today's lecture: 
 # 1. Demonstrate the above claims by coding an example game: FizzBuzz
 # 2. Demonstrate how to incrementally develop code/test code using functions
 #  
