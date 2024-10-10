@@ -1,18 +1,31 @@
-## Lecture 4 - Zybook 2.5, 2.8 – 2.11, 2.19
-# Big picture of using functions in code
-# 1. Given the description of a problem in English, write the definition of a function that solves the problem
+# fizzbuzz.py
+# Author: Diba Mirza
+# Lecture 4: Functions with branching
+# Zybook 2.5, 2.8 – 2.11, 2.19
 
-# 2. Given a monolithic block of code, use functions to make it more modular/readable: refactoring code
+# Demo: How to incrementally develop code
 
-# 3. Given a complex problem (like the project), figure out how to decompose the problem 
-# what functions you actually need to solve this larger problem
+# Write the stub of the function
+def fizzbuzz(num):
+    ''' int -> str
+    returns "Fizz" if the num is divisible by 3
+            "Buzz" if the num is divisible by 5
+            "Fizzbuzz" if the num is divisible by both 3 and 5
+            str(num), in all other cases
+    '''
+    if (num % 3 == 0 and num % 5 == 0):
+        return "Fizzbuzz" # return statement marks the end of the function
+    elif num % 3 == 0:
+        return "Fizz"
+    elif num % 5 == 0:
+        return "Buzz"
+    else:
+        return str(num)
 
-# Last lecture, we made the following claims about functions:
-# 1.Functions make it easier to test code
-# 2.Functions make it easier to find/fix program errors (bugs)
-# 3.Functions make it easier to write code (come up with the right algorithm)
 
-# Goal of today's lecture: 
-# 1. Demonstrate the above claims by coding an example game: FizzBuzz
-# 2. Demonstrate how to incrementally develop code/test code using functions
-#  
+print(f"{fizzbuzz(15)=}")
+print(f"{fizzbuzz(9)=}")
+print(f"{fizzbuzz(5)=}")
+print(f"{fizzbuzz(42)=}")
+print(f"{fizzbuzz(1)=}")
+
