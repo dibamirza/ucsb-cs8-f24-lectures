@@ -65,7 +65,7 @@ def play():
         print_board(board)
         #  Get the current player's move
         move = input(f"Player {current_player} enter your move (row, col): ")
-        # move is a str and not a tuple --- fix this
+        # move is a str, need to convert to a tuple --- fix this
         # move = "0, 1"
         lst_move = move.split(",")
         # print(lst_move)
