@@ -1,5 +1,5 @@
 # Lecture 13: Python Dictionaries - Demo and Practice Problems
-
+# zyBook: 7.1 - 7.3
 ## Name    | Age
 ## --------|-----
 ## Ana     | 3
@@ -8,8 +8,10 @@
 
 
 # What is a dictionary and why use one?
+invert_ages = { 'Ana' : 3, 'Bob': 2 , 'Rya': 5}
+
 print("Why use a dictionary?")
-print("Dictionary operations")
+print("\n\nDictionary operations")
 
 # Lookup:
 print("Rya's age:")
@@ -34,7 +36,7 @@ print("After deleting an element:", invert_ages)
 ##  C. The names of world countries and their capital cities
 ##  D. 50 random integers
 
-
+print("\n\n")
 # Example: Given a list of bird species and their respective counts,
 # find the count of a given bird
 ##+---------+-------+
@@ -88,13 +90,14 @@ print("Kinds after new sighting:", kinds)
 print("Counts after new sighting:", counts)
 
 
-## Concept question: Given the dictionary invert_ages,
-## what is the most efficient way to find out the age of "Rya"?
-
 # Transform parallel lists into a dictionary
-
 
 
 # Iterating Over a Dictionary
 print("Iterating over elements of a dictionary:")
+
+## Concept question: Given the dictionary invert_ages,
+## what is the most efficient way to find out the age of "Rya"?
+
+
 
