@@ -1,11 +1,15 @@
 from PIL import Image
 
 # Function to hide n most significant bits of one number into the least significant bits of another
-def hide_bits(large_value, small_value, n=4):
+def hide_bits(hat_value, bunny_value, n=4):
     """
     Embeds the n most significant bits of small_value into the least significant bits of large_value.
+    hat_value = 0xAB , bunny_value= 0xC3 , output = 0xAC
     """
-    return 42
+    n = (hat_value >> 4) << 4 # n = 0xA0
+    m = bunny_value >> 4  # 0x0C
+    
+    return n | m
 
 # Function to extract hidden bits from a number
 def extract_hidden_value(combined_value, n):
@@ -15,7 +19,7 @@ def extract_hidden_value(combined_value, n):
     return 42
 
 # Function to encode a single pixel
-def encode_pixel(large_pixel, small_pixel, n=4):
+def encode_pixel(hat_pixel, bunny_pixel, n=4):
     """
     Encodes a single pixel as a tuple from the hidden image into a pixel from the cover image.
     """
@@ -28,6 +32,7 @@ def decode_pixel(encoded_pixel, n=4):
     """
     return (1, 1, 1)
 
+# Function to encode an entire image
 # Function to encode an entire image
 def encode_image(large_image_path, small_image_path, output_image_path, n=4):
     """
@@ -45,15 +50,14 @@ def encode_image(large_image_path, small_image_path, output_image_path, n=4):
     encoded_image = Image.new('RGB', large_image.size, (0, 0, 0))
     for x in range(large_image.size[0]):
         for y in range(large_image.size[1]):
-            large_pixel = large_image.getpixel((x, y))
+            color_hat = large_image.getpixel((x, y))
             # TO DO: write code to create the output image
-           
-            encoded_image.putpixel((x,y), large_pixel )
+            
+            encoded_image.putpixel((x,y), color_hat )
     
     # Save the encoded image
     encoded_image.save(output_image_path, 'PNG')
     print(f"Encoded image saved as {output_image_path}")
-    encoded_image.show()
     return small_image.size
 
 # Function to decode a hidden image
@@ -68,11 +72,11 @@ def decode_image(encoded_image_path, hidden_image_size, n=4):
         for y in range(hidden_image_size[1]):
             encoded_pixel = encoded_image.getpixel((x, y))
             # TO DO: Decode the hidden pixel
+           
             hidden_image.putpixel((x, y), encoded_pixel)
 
     # Save the hidden image
     hidden_image.save("hidden_image.png", 'PNG')
-    hidden_image.show()
     print("Hidden image saved as 'hidden_image.png'")
 
 param_n = 4
