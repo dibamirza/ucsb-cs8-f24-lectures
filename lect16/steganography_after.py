@@ -33,32 +33,31 @@ def decode_pixel(encoded_pixel, n=4):
     return (1, 1, 1)
 
 # Function to encode an entire image
-# Function to encode an entire image
-def encode_image(large_image_path, small_image_path, output_image_path, n=4):
+def encode_image(hat_image_path, bunny_image_path, output_image_path, n=4):
     """
     Loops through all pixels to encode the small image into the large image.
     returns the size of the small image
     """
     # Load the large and small images
-    large_image = Image.open(large_image_path)
-    small_image = Image.open(small_image_path)
+    hat_image = Image.open(hat_image_path)
+    bunny_image = Image.open(bunny_image_path)
 
-    if small_image.size[0] > large_image.size[0] or small_image.size[1] > large_image.size[1]:
+    if bunny_image.size[0] > hat_image.size[0] or bunny_image.size[1] > hat_image.size[1]:
         print("Hidden image is larger than Cover Image")
         return
     
-    encoded_image = Image.new('RGB', large_image.size, (0, 0, 0))
-    for x in range(large_image.size[0]):
-        for y in range(large_image.size[1]):
-            color_hat = large_image.getpixel((x, y))
-            # TO DO: write code to create the output image
+    encoded_image = Image.new('RGB', hat_image.size, (0, 0, 0))
+    for x in range(hat_image.size[0]):
+        for y in range(hat_image.size[1]):
+            color_hat = hat_image.getpixel((x, y))
+            # TO DO: write code to create the output(encoded) image
             
-            encoded_image.putpixel((x,y), color_hat )
+            encoded_image.putpixel((x,y), tuple(color_hat))
     
     # Save the encoded image
     encoded_image.save(output_image_path, 'PNG')
     print(f"Encoded image saved as {output_image_path}")
-    return small_image.size
+    return bunny_image.size
 
 # Function to decode a hidden image
 def decode_image(encoded_image_path, hidden_image_size, n=4):
@@ -71,7 +70,7 @@ def decode_image(encoded_image_path, hidden_image_size, n=4):
     for x in range(hidden_image_size[0]):
         for y in range(hidden_image_size[1]):
             encoded_pixel = encoded_image.getpixel((x, y))
-            # TO DO: Decode the hidden pixel
+            # TO DO: Decode the encoded_pixel to get the hidden_pixel
            
             hidden_image.putpixel((x, y), encoded_pixel)
 
