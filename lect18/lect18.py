@@ -91,3 +91,6 @@
 
 # 9. Check if a list is a sublist of another list (Challenge problem)
 # Assume both are lists of numbers
+# Write the stub of the function
+# Write two test cases
+# Complete the function to pass the test cases
