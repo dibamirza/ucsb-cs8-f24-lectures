@@ -57,5 +57,5 @@ def fancyTree(height, branch_len, pen_width):
 jane.up()
 jane.backward(200)
 jane.down()
-fancyTree(10, 80, 8)
+fancyTree(10, 120, 8)
     
