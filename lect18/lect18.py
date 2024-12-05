@@ -72,7 +72,7 @@
 # Write a function to count how many values in the list are greater than their respective indices.
 # Example:
 # Input: nums = [3, 2, 5, 1]
-# Output: 2 (3 > 0 and 5 > 2)
+# Output: 3 (3 > 0, 2 > 1, and 5 > 2)
 
 # def count_values_greater_than_index(nums):
 #
